@@ -481,8 +481,34 @@
     }
   
     .header-nav {
-      display: none;
-    }
+    position: absolute;
+    top: 80%;
+    left: -5%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #FCF6ED;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-60px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    z-index: 1000;
+  }
+
+  .header-nav.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .header-menu-mobile.open i::before {
+    content: "\f00d"; /* Ícono de "X" (cerrar) */
+  }
   
     .header-menu-mobile {
       display: block;
@@ -498,6 +524,7 @@
     }
   
     .hero-description {
+      padding-top: 40px;
       font-size: 16px;
       line-height: 24px;
     }
@@ -505,11 +532,16 @@
     .hero-buttons {
       flex-direction: column;
       width: 100%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
     }
   
     .button-outline,
     .button-solid {
       width: 100%;
+      text-align: center;
+      text-decoration: none;
     }
   
     .features {
@@ -524,10 +556,15 @@
     .feature-description {
       font-size: 18px;
       line-height: 28px;
+      text-decoration: none;
     }
   
     .cta-section {
       padding: 48px 20px;
+    }
+
+    .cta-button{
+      text-decoration: none;
     }
   
     .footer-bottom {
@@ -537,11 +574,16 @@
     .footer-content {
       flex-direction: column;
       gap: 32px;
+      text-decoration: none;
     }
   
     .footer-nav {
       flex-direction: column;
       gap: 16px;
+      text-decoration: none;
+    }
+    .footer-nav-item{
+      text-decoration: none;
     }
   }
   

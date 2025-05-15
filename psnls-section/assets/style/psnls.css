@@ -23,6 +23,7 @@ html, body {
 }
 
 .typing-animation {
+  padding-top: 40px;
   display: inline-block;
   white-space: pre-wrap;
   word-break: break-word;
@@ -82,6 +83,7 @@ html, body {
 }
 
 .header-content {
+   position: relative;
   box-sizing: border-box;
   max-width: 1600px; /* más ancho */
   padding: 0 40px; /* nuevo */
@@ -446,30 +448,6 @@ html, body {
   }
 }
 
-@media (max-width: 640px) {
-  .ceramics-guide {
-    max-width: 640px;
-  }
-
-  .section-title {
-    font-size: 48px;
-    line-height: 56px;
-  }
-
-  .subsection-title {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .description {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 14px;
-    line-height: 18px;
-  }
-}
 /* Responsive styles */
 @media (max-width: 991px) {
   .header-content {
@@ -523,81 +501,137 @@ html, body {
 }
 
 @media (max-width: 640px) {
-  .content-column {
-    text-align: centerAS;
-    padding-left: 50px;
-    padding-right: 40px;
+    .ceramics-guide {
+      max-width: 640px;
+    }
 
-  }
-  .header-content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+    .section-title {
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 56px;
+    }
 
-  .header-nav {
-    display: none;
-  }
+    .subsection-title {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 24px;
+      line-height: 32px;
+    }
 
-  .header-menu-mobile {
-    display: block;
-  }
+    .description {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .content-column {
+      text-align: centerAS;
+      padding-left: 50px;
+      padding-right: 40px;
 
-  .hero {
-    padding: 48px 0;
-  }
-
-  .hero-title {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .hero-buttons {
+    }
+     .header-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .header-nav {
+    position: absolute;
+    top: 80%;
+    left: -5%;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
-  }
-
-  .button-outline,
-  .button-solid {
-    width: 100%;
-  }
-
-  .features {
-    padding: 48px 20px;
-  }
-
-  .feature-title {
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  .feature-description {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .cta-section {
-    padding: 48px 20px;
-  }
-
-  .footer-bottom {
+    background-color: #FCF6ED;
+    text-align: center;
     padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-60px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    z-index: 1000;
   }
 
-  .footer-content {
-    flex-direction: column;
-    gap: 32px;
+  .header-nav.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
-  .footer-nav {
-    flex-direction: column;
-    gap: 16px;
+  .header-menu-mobile.open i::before {
+    content: "\f00d"; /* Ícono de "X" (cerrar) */
   }
+  
+    .header-menu-mobile {
+      display: block;
+    }
 }
+
+
+    .hero {
+      padding: 48px 0;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .button-outline,
+      .button-solid {
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+      }
+
+    .features {
+      padding: 48px 20px;
+    }
+
+    .feature-title {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    .feature-description {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .cta-section {
+      padding: 48px 20px;
+    }
+
+    .footer-bottom {
+      padding: 20px;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .footer-nav {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
 
 @keyframes slideUp {
   0% {
