@@ -501,6 +501,44 @@ html, body {
 }
 
 @media (max-width: 640px) {
+       .header-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+      .header-nav {
+      position: absolute;
+      top: 100%;
+      left: -5%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      background-color: #ff0000;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(-60px);
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      display: flex;
+    }
+
+    .header-nav.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+
+    }
+
+  .header-menu-mobile.open i::before {
+    content: "\f00d"; /* Ícono de "X" (cerrar) */
+  }
+  
+    .header-menu-mobile {
+      display: block;
+    }
     .ceramics-guide {
       max-width: 640px;
     }
@@ -525,52 +563,11 @@ html, body {
       line-height: 18px;
     }
     .content-column {
-      text-align: centerAS;
+      text-align: center;
       padding-left: 50px;
       padding-right: 40px;
 
     }
-     .header-content {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  
-    .header-nav {
-    position: absolute;
-    top: 80%;
-    left: -5%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    background-color: #FCF6ED;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(-60px);
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    display: flex;
-    z-index: 1000;
-  }
-
-  .header-nav.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .header-menu-mobile.open i::before {
-    content: "\f00d"; /* Ícono de "X" (cerrar) */
-  }
-  
-    .header-menu-mobile {
-      display: block;
-    }
-}
-
-
     .hero {
       padding: 48px 0;
     }
@@ -631,7 +628,10 @@ html, body {
       flex-direction: column;
       gap: 16px;
     }
-  }
+}
+
+
+  
 
 @keyframes slideUp {
   0% {

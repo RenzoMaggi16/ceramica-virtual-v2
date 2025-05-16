@@ -1,4 +1,3 @@
-// Menú móvil (versión mejorada con cierre al hacer click fuera)
 const initMobileMenu = () => {
   const menuButton = document.querySelector('.header-menu-mobile');
   const nav = document.querySelector('.header-nav');
@@ -21,7 +20,8 @@ const initMobileMenu = () => {
   });
 };
 
-initMobileMenu(); // 👈 Aseguramos que se ejecute
+initMobileMenu(); // Aseguramos que se ejecute
+
 
 // Scroll efecto en header
 window.addEventListener("scroll", function () {
