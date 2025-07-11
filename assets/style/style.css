@@ -389,6 +389,178 @@
     color: #291f14;
   }
 
+  /* Developer signature styles */
+  .developer-signature {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .developer-link {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Albert Sans";
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .developer-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.4s ease;
+  }
+  
+  .developer-link:hover {
+    color: #fff;
+  }
+  
+  .developer-link:hover::after {
+    width: 100%;
+  }
+  
+  .developer-title {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .developer-link:hover .developer-title {
+    opacity: 1;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .developer-signature {
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+  
+  .cta-section {
+    width: 100%;
+    background-color: #c4a484;
+    padding: 96px 116px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cta-title {
+    color: #211f1f;
+    text-align: center;
+    font-weight: 400;
+    font-family: "Fraunces";
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-description {
+    color: #211f1f;
+    text-align: center;
+    font-family: "Albert Sans";
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 1166px;
+    margin: 0 auto;
+  }
+  
+  .bold {
+    font-weight: 700;
+  }
+  
+  .cta-button {
+    color: #fff;
+    font-family: "Albert Sans";
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 20px;
+    border-radius: 200px;
+    background-color: #211f1f;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    border: none;
+    margin: 20px auto 0;
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    background-color: #291f14;
+    padding: 40px 116px;
+  }
+  
+  .footer-content {
+    z-index: 1000000;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    color: #fff;
+    font-family: "Fraunces";
+    font-size: 36px;
+    font-weight: 300;
+  }
+  
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .footer-nav-item {
+    color: #fff;
+    font-family: "Albert Sans";
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+  .social-icons {
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .social-icon {
+    z-index: 100000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .social-icon:hover {
+    background-color: #fff;
+    color: #291f14;
+  }
+
   @keyframes slideUp {
     0% {
       opacity: 0;
